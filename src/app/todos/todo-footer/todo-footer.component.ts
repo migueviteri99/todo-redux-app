@@ -11,8 +11,8 @@ import { limpiar } from "src/app/todos/todo.actions";
 })
 export class TodoFooterComponent implements OnInit {
 
-  filtroActual: actions.filtrosValidos = 'todos';
-  filtros: actions.filtrosValidos[] = ['completados', 'pendientes', 'todos'];
+  filtroActual = 'todos';
+  filtros: string[] = ['todos', 'completados', 'pendientes'];
 
   pendientes: number = 0;
 
@@ -29,7 +29,7 @@ export class TodoFooterComponent implements OnInit {
   }
 
 
-  cambiarFiltro(filtro: actions.filtrosValidos){
+  cambiarFiltro(filtro: string){
     this.store.dispatch(actions.setFiltro({filtro: filtro}));
   }
 
